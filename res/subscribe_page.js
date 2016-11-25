@@ -28,17 +28,17 @@
             email: email
           },
           success: function() {
-            toast('提交成功')
+            toast('Submitted successfully')
             localStorage.subscriber = email
             handleSubscribed()
           },
           error: function() {
-            toast('网络错误，请稍候再试...')
+            toast('Network error, try again later.')
           }
         })
 
       } else {
-        toast('邮箱有误，请检查')
+        toast('Invalid email address')
       }
 
     }
@@ -47,9 +47,9 @@
 
   function handleSubscribed() {
 
-    descText.innerHTML = '感谢留意，我们将在一切就绪之后发送通知到您的邮箱：' + localStorage.subscriber
+    descText.innerHTML = 'Thanks, when we are ready, we will send an email to ' + localStorage.subscriber
     subscribeForm.classList.add('subscribed')
-    submitButton.innerHTML = '前往Github查看进度'
+    submitButton.innerHTML = 'Check Progress'
 
     submitButton.onclick = function() {
       location.href = 'https://github.com/margox/css.coffee'
